@@ -1,0 +1,104 @@
+import React from "react";
+import { Locate, Headphones } from "lucide-react";
+import CartIcon from "../icon/cart";
+import Tym from "../icon/tym";
+import Account from "../icon/account";
+const Header = () => {
+  return (
+    <header className="w-full text-[15px]" style={{ fontFamily: "inter" }}>
+      <div className="container mx-auto grid grid-cols-12 items-center px-12 py-2 bg-[#016504] text-white">
+        <div className="col-span-8">
+          <ul className="flex gap-6 items-center">
+            <li className="flex gap-2">
+              {" "}
+              <div>
+                <Locate />
+              </div>{" "}
+              Hệ thống cửa hàng
+            </li>
+            <li>Về Nhã Nam</li>
+            <li>Tin Sách</li>
+            <li>Event</li>
+          </ul>
+        </div>
+        <div className="col-span-4 justify-end items-center flex">
+          <Headphones />
+          <div className="ml-2">
+            Contact:<span className="ml-2">(84+) 869547255</span>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto grid grid-cols-12 items-center px-12 py-2 bg-[#F0F2F3]">
+        <div className="col-span-8 flex items-center gap-8">
+          <img
+            src="src/assets/images/logo.png"
+            alt="logo"
+            style={{ width: 70, height: 66 }}
+          />
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Tên sách lên xu hướng/bestselling..."
+              className="pt-2 pr-[50px] pb-2 pl-[18px] bg-white rounded border-none w-[600px] ml-2 float-[12px]"
+            />
+            <button className="absolute right-4 top-1/2 -translate-y-1/2">
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 23 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.5833 17.9167C14.6334 17.9167 17.9167 14.6334 17.9167 10.5833C17.9167 6.53325 14.6334 3.25 10.5833 3.25C6.53325 3.25 3.25 6.53325 3.25 10.5833C3.25 14.6334 6.53325 17.9167 10.5833 17.9167Z"
+                  stroke="#008300"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M19.7502 19.75L15.7627 15.7625"
+                  stroke="#008300"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div className="col-span-4">
+          <div>
+            <ul className="flex items-center justify-end mt-1 gap-6 text-center">
+              <li>
+                {" "}
+                <a href="#" className="text-[#707070]">
+                  
+                    <CartIcon />
+                  <p className="mt-2">Giỏ hàng</p>
+                  
+                </a>
+              </li>
+              <li>
+                {" "}
+                 <a href="#" className="text-[#707070]">
+                  <Tym />
+                  <p >Yêu thích</p>
+                </a>
+              </li>
+              <li>
+                {" "}
+                <a href="#" className="text-[#707070]">
+                  <Account />
+                  <p>Tài khoản</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
