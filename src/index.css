@@ -7,3 +7,6 @@
         @apply px-1 py-1 border cursor-pointer
     }
 } */
+html {
+    font-family: "Inter";
+}
