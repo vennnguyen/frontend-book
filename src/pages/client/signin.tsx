@@ -1,6 +1,10 @@
 import { z } from "zod"; // validate dữ liệu
 import { useForm } from "react-hook-form"; // quản lí trạng thái và sự kiện của form
 import { zodResolver } from "@hookform/resolvers/zod"; //giúp kết nối zod với hookform
+import { useAuthStore } from "@/stores/useAuthStore";
+import { useNavigate } from "react-router";
+
+
 const signInSchema = z.object({
   email: z.email("Email không hợp lệ"),
   password: z.string().min(6, "Mật khẩu phải có ít nhất 6 kí tự"),
@@ -8,6 +12,8 @@ const signInSchema = z.object({
 type SignInFormValues = z.infer<typeof signInSchema>;
 
 const LoginForm = () => {
+  const {signIn} = useAuthStore()
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -18,7 +24,12 @@ const LoginForm = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = async (data: SignInFormValues) => {
-    //gọi backend để tạo tài khoản
+   const {email, password} = data
+   await signIn(email,password)
+
+    setTimeout(() => {
+  navigate(0); 
+}, 1000);
   };
   return (
     <form className="space-y-5 text-left" onSubmit={handleSubmit(onSubmit)}>
@@ -28,7 +39,7 @@ const LoginForm = () => {
           Email <span className="text-red-500">*</span>
         </label>
         <input
-          type="email"
+          type="text  "
           placeholder="Nhập email"
           className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm
                      focus:border-[#016504] focus:ring-2 focus:ring-[#016504]/20
