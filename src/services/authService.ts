@@ -40,7 +40,7 @@ export const authService = {
     return res.data;
   },
   refresh: async () => {
-    const res = await api.get("/refresh", { withCredentials: true });
+    const res = await api.post("/refresh", { withCredentials: true });
     return res.data.accessToken;
   },
 };

@@ -5,8 +5,14 @@ import Home from "./pages/client/Home";
 import { Toaster } from "sonner";
 import Dashboard from "./pages/admin/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { useAuthStore } from "./stores/useAuthStore";
+import { useEffect } from "react";
 
 function App() {
+  const refresh = useAuthStore((s) => s.refresh)
+  useEffect(()=>{
+    refresh()
+  }, [])
   return (
     <>
       <Toaster

@@ -9,6 +9,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   accessToken: null,
   user: null,
   loading: false,
+  setAccessToken: (accessToken: string) => {
+    set({ accessToken });
+  },
   clearState: () => {
     set({ accessToken: null, user: null, loading: false });
   },
@@ -32,7 +35,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       set({ loading: true });
       const { accessToken } = await authService.signIn(email, password);
 
-      set({ accessToken });
+      get().setAccessToken(accessToken);
       await get().fetchMe();
       toast.success("Đăng nhập tài khoản thành công");
     } catch (error: any) {
@@ -81,7 +84,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       set({ loading: true });
       const { user, fetchMe } = get();
       const accessToken = await authService.refresh();
-      set({ accessToken });
+
+      get().setAccessToken(accessToken);
       if (!user) {
         await fetchMe();
       }

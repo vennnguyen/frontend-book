@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div>
         <Header/>
-        <div className='text-3xl'>{user?.fullName} hi</div>
+        <div className='text-3xl'>{user?.user?.fullName} hi</div>
     </div>
   )
 }

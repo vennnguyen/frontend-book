@@ -4,6 +4,7 @@ export interface AuthState {
   accessToken: string | null;
   user: User | null;
   loading: boolean;
+  setAccessToken: (accessToken: string) => void;
   signUp: (
     lastName: string,
     firstName: string,
