@@ -1,21 +1,23 @@
 import React, { useState } from "react";
-import { Locate, Headphones } from "lucide-react";
+
 import CartIcon from "../icon/cart";
 import Tym from "../icon/tym";
 import Account from "../icon/account";
 import Category from "../icon/category";
 import Auth from "./auth";
+import Location from "../icon/location";
+import Headphone from "../icon/headphone";
 const Header = () => {
   const [openModal, setOpenModal] = useState(false)
   return (
     <header className="w-full text-[15px]" style={{ fontFamily: "inter" }}>
-      <div className="container mx-auto grid grid-cols-12 items-center px-12 py-2 bg-[#016504] text-white">
+      <div className="mx-auto grid grid-cols-12 items-center px-12 py-2 bg-[#016504] text-white">
         <div className="col-span-8">
-          <ul className="flex gap-6 items-center">
-            <li className="flex gap-2">
+          <ul className="flex gap-6 ">
+            <li className="flex gap-2 items-center">
               {" "}
               <div>
-                <Locate />
+                <Location />
               </div>{" "}
               Hệ thống cửa hàng
             </li>
@@ -25,7 +27,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="col-span-4 justify-end items-center flex">
-          <Headphones />
+          <Headphone />
           <div className="ml-2">
             Contact:<span className="ml-2">(84+) 869547255</span>
           </div>
@@ -121,7 +123,7 @@ const Header = () => {
                     <button> <Category/></button>
                   <span className="text-[#016504] font-bold text-[16px] ">DANH MỤC</span>
                   </div>
-                  <div className="shop-menu absolute top-full left-0 mt-2
+                  {/* <div className="shop-menu absolute top-full left-0 mt-2
            opacity-0 scale-95
            group-hover:opacity-100 group-hover:scale-100
            transition-all duration-200
@@ -134,7 +136,7 @@ const Header = () => {
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo minima, ex explicabo facere praesentium quia dicta dignissimos autem, odio porro repellat fuga reprehenderit rem laboriosam nam similique nobis blanditiis tempora.
               </div>
             </div>
-           </div>
+           </div> */}
                 </li>
                 <li><a href="#" className="">Sách mới</a></li>
                 <li><a href="#">Sách bán chạy</a></li>

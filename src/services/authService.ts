@@ -1,7 +1,5 @@
 import api from "@/lib/axios";
 
-// import axios from "@/lib/axios";
-
 export const authService = {
   signUp: async (
     lastName: string,
