@@ -1,4 +1,5 @@
 import Carousel from '@/components/layout/carousel'
+import Footer from '@/components/layout/footer'
 import Header from '@/components/layout/header'
 import { useAuthStore } from '@/stores/useAuthStore'
 import type { Product } from '@/types/product'
@@ -93,7 +94,7 @@ const Home = () => {
   return (
     <div>
         <Header/>
-        <div className="main-home h-[1100px]">
+        <div className="main-home h-[1500px]">
           <img src="src/assets/images/img-home-slider1.jpg" alt="slider-home" />
           <section className='main-content mt-10'>
             <div className='mx-auto items-center px-12 py-2'>
@@ -107,6 +108,7 @@ const Home = () => {
           </div>
           </section>
         </div>
+        <Footer/>
     </div>
   )
 }

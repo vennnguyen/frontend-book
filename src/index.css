@@ -12,7 +12,14 @@
 html {
     font-family: "Inter";
 }
-
+.meie-script-regular {
+  font-family: "Meie Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.footer-link {
+  @apply text-[#B8B8B8] hover:text-white transition-colors duration-200 cursor-pointer leading-7;
+}
 @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
